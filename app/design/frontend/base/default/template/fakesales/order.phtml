@@ -1,0 +1,54 @@
+<?php $order = $this->getFakeSale(); ?>
+<div class="recent-sale" style="display: none;">
+    <div class="rs-cont">
+        <img class="rs-product-image"
+             alt="<?php echo $order->getName(); ?>"
+             src="<?php echo Mage::helper('catalog/image')->init($order, 'thumbnail'); ?>"
+        />
+        <p class="rs-text">
+            Alguien acaba de comprar
+            <a href="<?php echo $order->getProductUrl(); ?>">
+                <?php echo $order->getName(); ?>
+            </a>
+            hace
+            <?php echo $this->getTimeAgo(); ?>
+            minutos
+        </p>
+    </div>
+</div>
+<style>
+ .recent-sale {
+     border:1px solid #CCCCCC;
+     border-radius: 4px;
+     background-color:#FFFFFF;
+     box-shadow:0 0 10px rgba(0,0,0,.2);
+     position:fixed;
+     bottom: 7px;
+     left:7px;
+     overflow: hidden;
+     z-index: 100;
+     max-width: 300px;
+ }
+ .recent-sale .rs-cont {
+     margin:5px;
+ }
+ .recent-sale .rs-cont .rs-product-image {
+     display: inline-block;
+     float: left;
+     margin-right: 5px;
+     width:70px;
+ }
+ .recent-sale .rs-cont .rs-text {
+     margin:0;
+     padding-top: 10px;
+     font-size: 11px;
+     color:#666666;
+ }
+</style>
+<script>
+    var random = Math.floor((Math.random() * 20) + 1) * 1000;
+    var recent_purchase = setTimeout(function(){
+        $$(".recent-sale")[0].style.display = "block";
+        setTimeout(function (){$$(".recent-sale")[0].style.display = "none";}, 12000);
+    }, random);
+</script>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Yagator_Fakesales>
+            <version>1.0.0</version>
+        </Yagator_Fakesales>
+    </modules>
+    <global>
+        <helpers>
+            <yagator_fakesales>
+                <class>Yagator_Fakesales_Helper</class>
+            </yagator_fakesales>
+        </helpers>
+        <blocks>
+            <yagator_fakesales>
+                <class>Yagator_Fakesales_Block</class>
+            </yagator_fakesales>
+        </blocks>
+        <models>
+            <yagator_fakesales>
+                <class>Yagator_Fakesales_Model</class>
+            </yagator_fakesales>
+        </models>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <module>
+                    <file>yagator_fakesales.xml</file>
+                </module>
+            </updates>
+        </layout>
+    </frontend>
+</config>
